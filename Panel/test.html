@@ -49,6 +49,30 @@
             margin-bottom: 20px;
         }
 
+        .social-login {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            background: #f3f3f3;
+        }
+
         .divider {
             display: flex;
             align-items: center;
@@ -131,19 +155,6 @@
         .signup-text a:hover {
             text-decoration: underline;
         }
-
-        /* Error message styled in black-gradient theme */
-        .error-box {
-            margin-bottom: 15px;
-            padding: 12px;
-            border-radius: 8px;
-            font-size: 14px;
-            background: linear-gradient(180deg, #444, #111);
-            color: #fff;
-            font-weight: 500;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-            text-align: center;
-        }
     </style>
 </head>
 
@@ -155,27 +166,20 @@
         <h2>Admin Panel</h2>
         <p>Please enter your details to sign in</p>
 
-        <!-- Django Error Handling -->
-        {% if error %}
-        <div class="error-box">{{ error }}</div>
-        {% endif %}
-
         <div class="divider">Fill the details</div>
 
         <!-- Form -->
-        <form method="post">
-            {% csrf_token %}
-
+        <form>
             <!-- Role Selection -->
-            <select class="role-select" name="role" required>
+            <select class="role-select" required>
                 <option value="">Select Role</option>
                 <option value="admin">Admin</option>
                 <option value="scheduler">Scheduler</option>
             </select>
 
             <!-- Inputs -->
-            <input type="text" class="input-box" name="username" placeholder="Username" required>
-            <input type="password" class="input-box" name="password" placeholder="Password" required>
+            <input type="email" class="input-box" placeholder="Username" required>
+            <input type="password" class="input-box" placeholder="Password" required>
 
             <div class="options">
                 <label><input type="checkbox"> Remember me</label>
@@ -183,6 +187,8 @@
             </div>
 
             <button type="submit" class="login-btn">Sign in</button>
+
+            <!-- <p class="signup-text">Don’t have an account? <a href="#">Sign up</a></p> -->
         </form>
     </div>
 
