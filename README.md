@@ -153,7 +153,6 @@ http://127.0.0.1:8000/
 * Frontend and backend must run **simultaneously**
 * Currently uses local development servers
 * Can be extended to use Django REST Framework
-* SQLite can be replaced with PostgreSQL/MySQL
 
 ---
 
